@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGVerse</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="output.css" />
+    <script src="components/component.js" type="module"></script>
+  </head>
+
+  <body>
+    <!-- navbar  -->
+    <nav-bar></nav-bar>
+
+    <!-- hero section  -->
+    <div
+      class="flex flex-col items-center justify-center text-center py-20 px-6 bg-white text-8xl w-full h-f"
+      style="height: 500px; margin: 100px 10px"
+    >
+      <p class="text-5xl font-light text-gray-900 mb-4 leading-tight">
+        Exceptional
+        <span
+          class="font-bold underline underline-offset-4 decoration-2 decoration-gray-400"
+          >Stays.</span
+        ><br />
+        <span
+          class="font-semibold underline underline-offset-4 decoration-2 decoration-gray-400"
+          >Extraordinary Service.</span
+        >
+      </p>
+
+      <p
+        class="text-gray-500 text-lg max-w-2xl mb-8"
+        style="margin-bottom: 50px"
+      >
+        Discover premium Stay options with personalized service
+        <span class="text-gray-500 text-lg max-w-2xl mb-8 underline"
+          >that exceeds expectations.</span
+        >
+        Your dream dorm room awaits.
+      </p>
+      <div class="flex justify-center gap-6">
+        <button class="btn ms-lg-3 custombtn">Explore Options</button>
+
+        <button class="btn ms-lg-3 custombtn">Schedule Consultation</button>
+      </div>
+    </div>
+
+    <!-- Start of Find stay section  -->
+    <main>
+      <section>
+        <div class="mt-8 p-5 rounded shadow bg-white drop-shadow-2xl mb-10">
+          <div class="mt-10 p-5 rounded shadow bg-white drop-shadow-2xl mb-10">
+            <div class="text-wrap">
+              <center>
+                <div class="">
+                  <h1 class="font-sans text-2xl font-bold">
+                    Find Your Perfect Place to stay
+                  </h1>
+                  <p class="line-clamp-3">
+                    <span class="text-stone-500 max-w-2xl mb-8">
+                      Discover the perfect place that matches your lifestyle and
+                      budget as a student. <br />
+                      Explore our wide range of hostels, PGs, and flats tailored
+                      just for you.</span
+                    >
+                  </p>
+                </div>
+              </center>
+
+              <!-- search bar in the container-->
+              <div class="heroCardWhite">
+                <div class="search-container">
+                  <div class="flex justify-center gap-6">
+                    <button
+                      class="btn btn-search ms-lg-3"
+                      id="Hostels-search-btn"
+                      onclick="document.getElementById('Hostels-search-btn').classList.toggle('btn-Active');"
+                    >
+                      Hostels
+                    </button>
+
+                    <button
+                      class="btn btn-search ms-lg-3"
+                      id="Pg-search-btn"
+                      onclick="document.getElementById('Pg-search-btn').classList.toggle('btn-Active');"
+                    >
+                      PGs
+                    </button>
+
+                    <button
+                      class="btn btn-search ms-lg-3"
+                      id="Flat-search-btn"
+                      onclick="document.getElementById('Flat-search-btn').classList.toggle('btn-Active');"
+                    >
+                      Flats
+                    </button>
+                  </div>
+
+                  <form class="search-form">
+                    <div class="form-group">
+                      <label for="property-type">Property Type</label>
+                      <select id="property-type">
+                        <option>Hostels</option>
+                        <option>PGs</option>
+                        <option>Flats</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Location</label>
+                      <input
+                        type="text"
+                        id="location"
+                        placeholder="Enter city or neighborhood"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="price-range">Price Range</label>
+                      <select id="price-range">
+                        <option>₹0 - ₹30,000</option>
+                        <option>₹30,000 - ₹50,000</option>
+                        <option>₹50,000 - ₹75,000</option>
+                        <option>₹75,000+</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="search-btn">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Featured Properties Section -->
+    <main>
+      <section>
+        <div class="p-5 rounded shadow bg-white drop-shadow-2xl">
+          <div class="text-wrap text-center">
+            <h1 class="font-sans text-2xl font-bold">Featured Properties</h1>
+            <p class="line-clamp-3">
+              <span class="text-stone-500 max-w-2xl mb-8">
+                Handpicked Exceptional stays, that give you the home vibe.
+              </span>
+            </p>
+
+            <!-- For using cards, call the custom element like this: -->
+            <div
+              class="flex flex-wrap justify-center gap-8 mt-8 ml-8 mr-8"
+              style="padding: 15px; margin: 15px"
+            >
+              <pgverse-card
+                img="https://content.jdmagicbox.com/comp/ghaziabad/w4/011pxx11.xx11.191217190807.e5w4/catalogue/rpn-boy-s-hostel-dasna-ghaziabad-hostels-adyayiouqi.jpg"
+                title="Modern PG in Delhi"
+                text="Fully furnished rooms with all amenities."
+                button="View Details"
+                link="/details"
+                class="ml-8 mr-8 mb-8"
+              ></pgverse-card>
+            </div>
+            <div
+              id="featured-properties"
+              class="flex flex-wrap justify-center gap-8 mt-8 ml-8 mr-8"
+              style="padding: 15px; margin: 15px"
+            ></div>
+            <button class="custombtn btn ms-lg-3" id="">
+              View All Properties
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
