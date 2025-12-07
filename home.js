@@ -14,3 +14,9 @@
 //                 class="ml-8 mr-8 mb-8"
 //               ></pgverse-card>
 //             </div> -->
+
+import { loginCheck } from "./login.js";
+if (!loginCheck) {
+  alert("Please login to access the Home page.");
+  window.location.href = "./login.html";
+}

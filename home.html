@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="output.css" />
     <script src="components/component.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+  </style>
   </head>
 
   <body>
@@ -54,8 +59,8 @@
     <!-- Start of Find stay section  -->
     <main>
       <section>
-        <div class="mt-8 p-5 rounded shadow bg-white drop-shadow-2xl mb-10">
-          <div class="mt-10 p-5 rounded shadow bg-white drop-shadow-2xl mb-10">
+        <div class="mt-8 p-5 rounded  bg-white  mb-10">
+          <div class="mt-10 p-5 rounded  bg-white drop-shadow-2xl mb-10 border-2-black"> 
             <div class="text-wrap">
               <center>
                 <div class="">
@@ -142,42 +147,101 @@
     <!-- Featured Properties Section -->
     <main>
       <section>
-        <div class="p-5 rounded shadow bg-white drop-shadow-2xl">
-          <div class="text-wrap text-center">
-            <h1 class="font-sans text-2xl font-bold">Featured Properties</h1>
-            <p class="line-clamp-3">
-              <span class="text-stone-500 max-w-2xl mb-8">
-                Handpicked Exceptional stays, that give you the home vibe.
-              </span>
-            </p>
-
-            <!-- For using cards, call the custom element like this: -->
-            <div
-              class="flex flex-wrap justify-center gap-8 mt-8 ml-8 mr-8"
-              style="padding: 15px; margin: 15px"
-            >
-              <pgverse-card
-                img="https://content.jdmagicbox.com/comp/ghaziabad/w4/011pxx11.xx11.191217190807.e5w4/catalogue/rpn-boy-s-hostel-dasna-ghaziabad-hostels-adyayiouqi.jpg"
-                title="Modern PG in Delhi"
-                text="Fully furnished rooms with all amenities."
-                button="View Details"
-                link="/details"
-                class="ml-8 mr-8 mb-8"
-              ></pgverse-card>
-            </div>
-            <div
-              id="featured-properties"
-              class="flex flex-wrap justify-center gap-8 mt-8 ml-8 mr-8"
-              style="padding: 15px; margin: 15px"
-            ></div>
-            <button class="custombtn btn ms-lg-3" id="">
-              View All Properties
-            </button>
+      <!-- Featured Properties -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="flex justify-between items-end mb-8">
+              <div>
+                  <h2 class="text-3xl font-bold text-gray-900">Featured Properties</h2>
+                  <p class="text-gray-500 mt-2">Handpicked Exceptional stays, that give you the home vibe.</p>
+              </div>
+              <a href="#" onclick="showSection('browse')" class="text-primary font-medium hover:text-indigo-700 flex items-center">
+                  View All <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
           </div>
-        </div>
-      </section>
-    </main>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Card 1 -->
+              <pg-card 
+                title="Sunshine Residency"
+                price="8500"
+                location="Koramangala, Bangalore"
+                rating="4.8"
+                type="Boys"
+                image="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80">
+              </pg-card>
+
+
+              <!-- Card 2 -->
+              <pg-card
+                title="Lavender Heights"
+                price="10000"
+                location="HSR Layout, Bangalore"
+                rating="4.5"
+                type="Girls"
+                image="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                features="fa-wifi|WiFi, fa-shirt|Laundry, fa-shield-halved|24x7">
+              </pg-card>
+
+
+              <!-- Card 3 -->
+              <pg-card
+                title="Urban Nest"
+                price="12500"
+                location="Indiranagar, Bangalore"
+                rating="4.2"
+                type="Co-ed"
+                image="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80"
+                features="fa-wifi|WiFi, fa-snowflake|AC, fa-dumbbell|Gym">
+            </pg-card>
+            
+          </div>
+      </div>
+  </div>
+
+    <!-- Contact Page -->
+    
+    <!-- footer  -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div class="col-span-1 md:col-span-2">
+                  <div class="flex items-center mb-4">
+                      <i class="fa-solid fa-house-chimney text-primary text-2xl mr-2"></i>
+                      <span class="font-bold text-xl tracking-tight">PGVerse</span>
+                  </div>
+                  <p class="text-gray-400 text-sm max-w-xs">
+                      Making student housing simple, transparent, and hassle-free. Find your perfect PG today.
+                  </p>
+              </div>
+              <div>
+                  <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                  <ul class="space-y-2 text-sm text-gray-400">
+                      <li><a href="#" onclick="showSection('home')" class="hover:text-white transition">Home</a></li>
+                      <li><a href="#" onclick="showSection('browse')" class="hover:text-white transition">Browse PGs</a></li>
+                      <li><a href="#" onclick="showSection('owner')" class="hover:text-white transition">List Your PG</a></li>
+                      <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <h4 class="font-bold text-lg mb-4">Contact</h4>
+                  <ul class="space-y-2 text-sm text-gray-400">
+                      <li><i class="fa-solid fa-envelope mr-2"></i> support@pgverse.com</li>
+                      <li><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</li>
+                      <li class="flex space-x-4 mt-4">
+                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
+              &copy; 2026 PGVerse. All rights reserved.
+          </div>
+      </div>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./home.js"></script>
   </body>
 </html>
