@@ -77,6 +77,17 @@ class PgNavbar extends HTMLElement {
     const newLoginOutBtn = this.shadowRoot.getElementById("login-out-btn");
     const newBrowseBtn = this.shadowRoot.getElementById("browse-btn");
     const homeBtn = this.shadowRoot.getElementById("home-btn");
+    const ownerBtn = this.shadowRoot.getElementById("post-btn");
+
+    ownerBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("Please login to post properties.");
+        window.location.href = "../../src/login.html";
+      } else {
+        window.location.href = "../../src/owner.html";
+      }
+    });
 
     // Login/Logout button logic
     newLoginOutBtn.addEventListener("click", (e) => {
@@ -441,6 +452,18 @@ class PGFooter extends HTMLElement {
         window.location.href = "../../src/login.html";
       } else {
         window.location.href = "../../src/browse.html";
+      }
+    });
+    const ownerBtn = this.shadowRoot.querySelector(
+      '.footer-links a[onclick*="owner"]'
+    );
+    ownerBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("Please login to list your PG.");
+        window.location.href = "../../src/login.html";
+      } else {
+        window.location.href = "../../src/owner.html";
       }
     });
   }
