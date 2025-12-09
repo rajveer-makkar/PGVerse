@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="output.css" />
+
     <script src="components/component.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -197,51 +198,14 @@
           </div>
       </div>
   </div>
+</section>
+</main>
 
-    <!-- Contact Page -->
     
     <!-- footer  -->
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div class="col-span-1 md:col-span-2">
-                  <div class="flex items-center mb-4">
-                      <i class="fa-solid fa-house-chimney text-primary text-2xl mr-2"></i>
-                      <span class="font-bold text-xl tracking-tight">PGVerse</span>
-                  </div>
-                  <p class="text-gray-400 text-sm max-w-xs">
-                      Making student housing simple, transparent, and hassle-free. Find your perfect PG today.
-                  </p>
-              </div>
-              <div>
-                  <h4 class="font-bold text-lg mb-4">Quick Links</h4>
-                  <ul class="space-y-2 text-sm text-gray-400">
-                      <li><a href="#" onclick="showSection('home')" class="hover:text-white transition">Home</a></li>
-                      <li><a href="#" onclick="showSection('browse')" class="hover:text-white transition">Browse PGs</a></li>
-                      <li><a href="#" onclick="showSection('owner')" class="hover:text-white transition">List Your PG</a></li>
-                      <li><a href="#" class="hover:text-white transition">About Us</a></li>
-                  </ul>
-              </div>
-              <div>
-                  <h4 class="font-bold text-lg mb-4">Contact</h4>
-                  <ul class="space-y-2 text-sm text-gray-400">
-                      <li><i class="fa-solid fa-envelope mr-2"></i> support@pgverse.com</li>
-                      <li><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</li>
-                      <li class="flex space-x-4 mt-4">
-                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
-                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
-                          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
-              &copy; 2026 PGVerse. All rights reserved.
-          </div>
-      </div>
-  </footer>
+    <pg-footer></pg-footer>
 
+  <script src="./home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./home.js"></script>
   </body>
 </html>
