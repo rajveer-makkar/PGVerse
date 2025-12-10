@@ -81,9 +81,9 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to post properties.");
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       } else {
-        window.location.href = "../../src/owner.html";
+        window.location.href = "../owner.html";
       }
     });
 
@@ -92,9 +92,9 @@ class PgNavbar extends HTMLElement {
       if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", "false");
         alert("Logged out successfully!");
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       } else {
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       }
     });
 
@@ -102,14 +102,14 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       } else {
-        window.location.href = "../../src/browse.html";
+        window.location.href = "../browse.html";
       }
     });
     homeBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../../src/home.html";
+      window.location.href = "../home.html";
     });
 
     import(
@@ -427,14 +427,14 @@ class PGFooter extends HTMLElement {
     );
     homeBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../../src/home.html";
+      window.location.href = "../home.html";
     });
     const loginBtn = this.shadowRoot.querySelector(
       '.footer-links a[onclick*="login"]'
     );
     loginBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../../src/index.html";
+      window.location.href = "../index.html";
     });
     // Browse button logic
     const browseBtn = this.shadowRoot.querySelector(
@@ -444,9 +444,9 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       } else {
-        window.location.href = "../../src/browse.html";
+        window.location.href = "../browse.html";
       }
     });
     const ownerBtn = this.shadowRoot.querySelector(
@@ -456,9 +456,9 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to list your PG.");
-        window.location.href = "../../src/index.html";
+        window.location.href = "../index.html";
       } else {
-        window.location.href = "../../src/owner.html";
+        window.location.href = "../owner.html";
       }
     });
   }
