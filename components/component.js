@@ -408,12 +408,12 @@ class PGFooter extends HTMLElement {
               <div class="footer-title">Contact</div>
               <ul class="footer-contact">
                 <li><i class="fa-solid fa-envelope"></i> support@pgverse.com</li>
-                <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                <li><i class="fa-solid fa-phone"></i> +91 9xxxx xxxxx</li>
                 <li>
                   <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://github.com/rajveer-makkar/PGVerse"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/raj.veermakkar/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@shadowcringeditor"><i class="fa-brands fa-youtube"></i></a>
                   </div>
                 </li>
               </ul>
