@@ -27,7 +27,7 @@ class PgNavbar extends HTMLElement {
       <div class="navbar-container bg-white border-bottom border-2 border-light sticky-top" style="padding: 0px 50px">
         <nav class="navbar navbar-expand-lg ">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">PGVerse</a>
+            <a class="navbar-brand" href="#" style="font-size:1.35rem; line-height:1.75rem; font-weight:bold;   letter-spacing: -0.01rem; margin-left:10px;" id="navBrand-btn">PGVerse</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -48,7 +48,7 @@ class PgNavbar extends HTMLElement {
                  <a href="#" id="browse-btn" class="nav-link">Browse</a>
                 </li>
                 <li class="nav-item ms-lg-4">
-                  <a class="nav-link" href="#" id="post-btn">Post Properties</a>
+                  <a class="nav-link" href="#" id="post-btn">Add Listings</a>
                 </li>
                 <li class="nav-item ms-lg-4">
                   <a class="btn btn-contact ms-lg-3" href="#" id="login-out-btn"></a>
@@ -66,6 +66,7 @@ class PgNavbar extends HTMLElement {
     const collapseElement = this.shadowRoot.querySelector("#navbarNav");
     const loginOutBtn = this.shadowRoot.getElementById("login-out-btn");
     const browseBtn = this.shadowRoot.getElementById("browse-btn");
+    const PGVerseBtn = this.shadowRoot.getElementById("navBrand-btn");
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     loginOutBtn.innerHTML = isLoggedIn ? "Logout" : "Login";
@@ -73,8 +74,6 @@ class PgNavbar extends HTMLElement {
     loginOutBtn.replaceWith(loginOutBtn.cloneNode(true));
     browseBtn.replaceWith(browseBtn.cloneNode(true));
     // Re-query after replace
-    const newLoginOutBtn = this.shadowRoot.getElementById("login-out-btn");
-    const newBrowseBtn = this.shadowRoot.getElementById("browse-btn");
     const homeBtn = this.shadowRoot.getElementById("home-btn");
     const ownerBtn = this.shadowRoot.getElementById("post-btn");
 
@@ -88,7 +87,7 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    newLoginOutBtn.addEventListener("click", (e) => {
+    loginOutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", "false");
@@ -99,7 +98,7 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    newBrowseBtn.addEventListener("click", (e) => {
+    browseBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
@@ -109,6 +108,10 @@ class PgNavbar extends HTMLElement {
       }
     });
     homeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = BASE_URL + "home.html";
+    });
+    PGVerseBtn.addEventListener("click", (e) => {
       e.preventDefault();
       window.location.href = BASE_URL + "home.html";
     });
@@ -396,7 +399,7 @@ class PGFooter extends HTMLElement {
                 <li><a href="#" onclick="showSection('home')">Home</a></li>
                 <li><a href="#" onclick="showSection('browse')">Browse PGs</a></li>
                 <li><a href="#" onclick="showSection('owner')">List Your PG</a></li>
-                <li><a href="#" onclick="showSection('login')">Login</a></li>
+                <li><a href="#" onclick="showSection('login')" id="login-out-btn"></a></li>
               </ul>
             </div>
             <div>
@@ -429,6 +432,10 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       window.location.href = BASE_URL + "home.html";
     });
+    const loginOutBtn = this.shadowRoot.getElementById("login-out-btn");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    loginOutBtn.innerHTML = isLoggedIn ? "Logout" : "Login";
+
     const loginBtn = this.shadowRoot.querySelector(
       '.footer-links a[onclick*="login"]'
     );
@@ -436,6 +443,7 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       window.location.href = BASE_URL + "index.html";
     });
+
     const browseBtn = this.shadowRoot.querySelector(
       '.footer-links a[onclick*="browse"]'
     );
@@ -462,4 +470,5 @@ class PGFooter extends HTMLElement {
     });
   }
 }
+
 customElements.define("pg-footer", PGFooter);
