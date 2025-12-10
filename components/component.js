@@ -81,7 +81,7 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to post properties.");
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       } else {
         window.location.href = "../../src/owner.html";
       }
@@ -92,9 +92,9 @@ class PgNavbar extends HTMLElement {
       if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", "false");
         alert("Logged out successfully!");
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       } else {
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       }
     });
 
@@ -102,7 +102,7 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       } else {
         window.location.href = "../../src/browse.html";
       }
@@ -434,7 +434,7 @@ class PGFooter extends HTMLElement {
     );
     loginBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../../src/login.html";
+      window.location.href = "../../src/index.html";
     });
     // Browse button logic
     const browseBtn = this.shadowRoot.querySelector(
@@ -444,7 +444,7 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       } else {
         window.location.href = "../../src/browse.html";
       }
@@ -456,7 +456,7 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to list your PG.");
-        window.location.href = "../../src/login.html";
+        window.location.href = "../../src/index.html";
       } else {
         window.location.href = "../../src/owner.html";
       }
