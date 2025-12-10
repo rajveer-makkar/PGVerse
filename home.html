@@ -15,7 +15,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
+<script>
+  function openBrowsePage(){
+    window.location.href = "/PGVerse/" + "browse.html";
+  }
+  function openAddListingsPage(){
+    window.location.href = "/PGVerse/" + "owner.html";
+  }
+</script>
   </style>
   <link rel="icon" type="image/png" href="./assets/favicon.png"/>
   </head>
@@ -25,10 +32,12 @@
     <nav-bar></nav-bar>
 
     <!-- hero section  -->
+     
     <div
       class="flex flex-col items-center justify-center text-center py-20 px-6 bg-white text-8xl w-full h-f"
       style="height: 500px; margin: 100px 10px"
     >
+
       <p class="text-5xl font-light text-gray-900 mb-4 leading-tight">
         Exceptional
         <span
@@ -52,10 +61,15 @@
         Your dream dorm room awaits.
       </p>
       <div class="flex justify-center gap-6">
-        <button class="btn ms-lg-3 custombtn">Explore Options</button>
+        <button class="btn ms-lg-3 custombtn"
+        onclick="openBrowsePage()"
+        >Explore Options</button>
 
-        <button class="btn ms-lg-3 custombtn">Schedule Consultation</button>
+        <button class="btn ms-lg-3 custombtn"
+        onclick="openAddListingsPage()"
+        >Add Your Listings</button>
       </div>
+
     </div>
 
     <!-- Start of Find stay section  -->
