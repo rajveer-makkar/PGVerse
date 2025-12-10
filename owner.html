@@ -18,7 +18,47 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
+    <script>
+      function submitBtnFunc() {
+        alert("Your property listing has been submitted successfully!");
+        const photo = document.getElementById("photo-upload");
+        photo.value = "";
+        const preview = document.getElementById("photo-preview");
+        preview.innerHTML = "";
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        const addressField = document.getElementById("address");
+        addressField.value = "";
+        const pgNameField = document.getElementById("pg-name");
+        pgNameField.value = "";
+        const monthlyRentField = document.getElementById("monthly-rent");
+        monthlyRentField.value = "";
+        const securityDepositField =
+          document.getElementById("security-deposit");
+        securityDepositField.value = "";
+      }
+      function resetBtnFunc() {
+        const photo = document.getElementById("photo-upload");
+        photo.value = "";
+        const preview = document.getElementById("photo-preview");
+        preview.innerHTML = "";
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        const addressField = document.getElementById("address");
+        addressField.value = "";
+        const pgNameField = document.getElementById("pg-name");
+        pgNameField.value = "";
+        const monthlyRentField = document.getElementById("monthly-rent");
+        monthlyRentField.value = "";
+        const securityDepositField =
+          document.getElementById("security-deposit");
+        securityDepositField.value = "";
+      }
+    </script>
     <style>
       .grid label:hover {
         cursor: pointer;
@@ -92,6 +132,7 @@
                         type="text"
                         class="w-full border-gray-300 rounded-lg shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border"
                         placeholder="e.g. Sunshine Residency"
+                        id="pg-name"
                       />
                     </div>
                     <div>
@@ -103,6 +144,7 @@
                         type="number"
                         class="w-full border-gray-300 rounded-lg shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border"
                         placeholder="8500"
+                        id="monthly-rent"
                       />
                     </div>
                     <div>
@@ -114,6 +156,7 @@
                         type="number"
                         class="w-full border-gray-300 rounded-lg shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border"
                         placeholder="10000"
+                        id="security-deposit"
                       />
                     </div>
                     <div class="col-span-2">
@@ -125,6 +168,7 @@
                         rows="3"
                         class="w-full border-gray-300 rounded-lg shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border"
                         placeholder="Full address with landmark"
+                        id="address"
                       ></textarea>
                     </div>
                   </div>
@@ -234,12 +278,14 @@
                   <button
                     type="button"
                     class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition"
+                    onclick="resetBtnFunc()"
                   >
                     Reset
                   </button>
                   <button
                     type="button"
                     class="px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-indigo-700 transition shadow-sm"
+                    onclick="submitBtnFunc()"
                   >
                     Submit Listing
                   </button>
