@@ -67,10 +67,8 @@ class PgNavbar extends HTMLElement {
     const browseBtn = this.shadowRoot.getElementById("browse-btn");
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-    // Set login/logout button text
     loginOutBtn.innerHTML = isLoggedIn ? "Logout" : "Login";
 
-    // Remove previous listeners if any
     loginOutBtn.replaceWith(loginOutBtn.cloneNode(true));
     browseBtn.replaceWith(browseBtn.cloneNode(true));
     // Re-query after replace
@@ -89,7 +87,6 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    // Login/Logout button logic
     newLoginOutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (isLoggedIn) {
@@ -101,7 +98,6 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    // Browse button logic
     newBrowseBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
@@ -116,7 +112,6 @@ class PgNavbar extends HTMLElement {
       window.location.href = "../../src/home.html";
     });
 
-    // Bootstrap collapse (if needed)
     import(
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
     ).then((module) => {

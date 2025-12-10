@@ -202,24 +202,31 @@
   
                   <!-- Photos -->
                   <div class="mb-8">
-                    <h3
-                      class="text-lg font-medium text-gray-900 mb-4 border-b pb-2"
-                    >
+                    <h3 class="text-lg font-medium text-gray-900 mb-4 border-b pb-2">
                       Photos
                     </h3>
-                    <div
-                      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:bg-gray-50 transition cursor-pointer"
+                    <label
+                      for="photo-upload"
+                      class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:bg-gray-50 transition cursor-pointer block"
+                      style="cursor: pointer;"
                     >
-                      <i
-                        class="fa-solid fa-cloud-arrow-up text-4xl text-gray-400 mb-3"
-                      ></i>
+                      <i class="fa-solid fa-cloud-arrow-up text-4xl text-gray-400 mb-3"></i>
                       <p class="text-sm text-gray-500 font-medium">
                         Click to upload or drag and drop
                       </p>
                       <p class="text-xs text-gray-400 mt-1">
                         PNG, JPG up to 5MB (Max 4 photos)
                       </p>
-                    </div>
+                      <input
+                        id="photo-upload"
+                        name="photos"
+                        type="file"
+                        accept="image/png, image/jpeg"
+                        multiple
+                        class="hidden"
+                      />
+                    </label>
+                    <div id="photo-preview" class="flex gap-4 mt-4"></div>
                   </div>
   
                   <div class="flex justify-end gap-4">
@@ -246,7 +253,25 @@
     <!-- footer  -->
     <pg-footer></pg-footer>
 
-  <script src="./home.js"></script>
+  <script>
+    document.getElementById('photo-upload').addEventListener('change', function (e) {
+  const preview = document.getElementById('photo-preview');
+  preview.innerHTML = '';
+  const files = Array.from(e.target.files).slice(0, 4); // Max 4 photos
+  files.forEach(file => {
+    if (file.size <= 5 * 1024 * 1024) { // 5MB limit
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        img.className = 'h-24 w-24 object-cover rounded-lg border';
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+});
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
