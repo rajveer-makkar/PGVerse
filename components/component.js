@@ -74,6 +74,8 @@ class PgNavbar extends HTMLElement {
     loginOutBtn.replaceWith(loginOutBtn.cloneNode(true));
     browseBtn.replaceWith(browseBtn.cloneNode(true));
     // Re-query after replace
+    const newLoginOutBtn = this.shadowRoot.getElementById("login-out-btn");
+    const newBrowseBtn = this.shadowRoot.getElementById("browse-btn");
     const homeBtn = this.shadowRoot.getElementById("home-btn");
     const ownerBtn = this.shadowRoot.getElementById("post-btn");
 
@@ -87,7 +89,7 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    loginOutBtn.addEventListener("click", (e) => {
+    newLoginOutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", "false");
@@ -98,7 +100,7 @@ class PgNavbar extends HTMLElement {
       }
     });
 
-    browseBtn.addEventListener("click", (e) => {
+    newBrowseBtn.addEventListener("click", (e) => {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
