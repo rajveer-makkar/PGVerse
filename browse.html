@@ -272,6 +272,30 @@
 
     
 <pg-footer></pg-footer>
+<script>
+  // Attach click event to all pg-card elements
+document.addEventListener("click", function (e) {
+  const card = e.target.closest("pg-card");
+
+  if (card) {
+    const details = {
+      image: card.getAttribute("image"),
+      title: card.getAttribute("title"),
+      price: card.getAttribute("price"),
+      location: card.getAttribute("location"),
+      rating: card.getAttribute("rating"),
+      type: card.getAttribute("type"),
+    };
+
+
+    localStorage.setItem("pgDetails", JSON.stringify(details));
+
+
+    window.location.href = "details.html";
+  }
+});
+
+</script>
 
   <script src="./home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
