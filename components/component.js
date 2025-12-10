@@ -1,3 +1,4 @@
+const BASE_URL = "/PGVerse/";
 class PgNavbar extends HTMLElement {
   constructor() {
     super();
@@ -81,9 +82,9 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to post properties.");
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       } else {
-        window.location.href = "../owner.html";
+        window.location.href = BASE_URL + "owner.html";
       }
     });
 
@@ -92,9 +93,9 @@ class PgNavbar extends HTMLElement {
       if (isLoggedIn) {
         localStorage.setItem("isLoggedIn", "false");
         alert("Logged out successfully!");
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       } else {
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       }
     });
 
@@ -102,14 +103,14 @@ class PgNavbar extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       } else {
-        window.location.href = "../browse.html";
+        window.location.href = BASE_URL + "browse.html";
       }
     });
     homeBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../home.html";
+      window.location.href = BASE_URL + "home.html";
     });
 
     import(
@@ -421,22 +422,20 @@ class PGFooter extends HTMLElement {
     `;
   }
   connectedCallback() {
-    // Home button logic
     const homeBtn = this.shadowRoot.querySelector(
       '.footer-links a[href="#"]:not([onclick*="browse"])'
     );
     homeBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../home.html";
+      window.location.href = BASE_URL + "home.html";
     });
     const loginBtn = this.shadowRoot.querySelector(
       '.footer-links a[onclick*="login"]'
     );
     loginBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "../index.html";
+      window.location.href = BASE_URL + "index.html";
     });
-    // Browse button logic
     const browseBtn = this.shadowRoot.querySelector(
       '.footer-links a[onclick*="browse"]'
     );
@@ -444,9 +443,9 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to browse properties.");
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       } else {
-        window.location.href = "../browse.html";
+        window.location.href = BASE_URL + "browse.html";
       }
     });
     const ownerBtn = this.shadowRoot.querySelector(
@@ -456,9 +455,9 @@ class PGFooter extends HTMLElement {
       e.preventDefault();
       if (localStorage.getItem("isLoggedIn") !== "true") {
         alert("Please login to list your PG.");
-        window.location.href = "../index.html";
+        window.location.href = BASE_URL + "index.html";
       } else {
-        window.location.href = "../owner.html";
+        window.location.href = BASE_URL + "owner.html";
       }
     });
   }
